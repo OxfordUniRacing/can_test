@@ -1,0 +1,834 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>ATSAMC21J18A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>example_samc21j18a</AssemblyName>
+    <Name>example_samc21j18a</Name>
+    <RootNamespace>example_samc21j18a</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.40.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
+    <avrtoolserialnumber>ATML2419061800000144</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x11010400</avrdeviceexpectedsignature>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_edbg>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
+      <ToolNumber>ATML2419061800000144</ToolNumber>
+      <ToolName>EDBG</ToolName>
+    </com_atmel_avrdbg_tool_edbg>
+    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <UsesExternalMakeFile>True</UsesExternalMakeFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\Release</OutputDirectory>
+    <BuildTarget>all RELEASE=1</BuildTarget>
+    <CleanTarget>clean RELEASE=1</CleanTarget>
+    <ExternalMakeFilePath>Makefile</ExternalMakeFilePath>
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+</ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <UsesExternalMakeFile>True</UsesExternalMakeFile>
+    <OutputDirectory>$(MSBuildProjectDirectory)\Debug</OutputDirectory>
+    <BuildTarget>all</BuildTarget>
+    <CleanTarget>clean</CleanTarget>
+    <ExternalMakeFilePath>Makefile</ExternalMakeFilePath>
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+</ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="CMSIS\" />
+    <Folder Include="CMSIS\Documentation\" />
+    <Folder Include="CMSIS\Documentation\Core\" />
+    <Folder Include="CMSIS\Documentation\Core\html\" />
+    <Folder Include="CMSIS\Include\" />
+    <Folder Include="config\" />
+    <Folder Include="examples\" />
+    <Folder Include="hal\" />
+    <Folder Include="hal\include\" />
+    <Folder Include="hal\src\" />
+    <Folder Include="hal\utils\" />
+    <Folder Include="hal\utils\include\" />
+    <Folder Include="hal\utils\src\" />
+    <Folder Include="hpl\" />
+    <Folder Include="hpl\core\" />
+    <Folder Include="hpl\divas\" />
+    <Folder Include="hpl\dmac\" />
+    <Folder Include="hpl\gclk\" />
+    <Folder Include="hpl\mclk\" />
+    <Folder Include="hpl\osc32kctrl\" />
+    <Folder Include="hpl\oscctrl\" />
+    <Folder Include="hpl\pm\" />
+    <Folder Include="hpl\port\" />
+    <Folder Include="hri\" />
+    <Folder Include="samc21\" />
+    <Folder Include="samc21\include\" />
+    <Folder Include="samc21\include\component\" />
+    <Folder Include="samc21\include\instance\" />
+    <Folder Include="samc21\include\pio\" />
+    <Folder Include="samc21\startup\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AtmelStart.env_conf">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="AtmelStart.gpdsc">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="atmel_start_config.atstart">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="CMSIS\Documentation\Core\html\index.html">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="example_samc21j18a.componentinfo.xml">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Makefile">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="samc21\startup\samc21j18a_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="samc21\startup\samc21j18a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="atmel_start.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmel_start.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="atmel_start_pins.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\arm_common_tables.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\arm_const_structs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\arm_math.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\cmsis_armcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\cmsis_armclang.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\cmsis_compiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\cmsis_gcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_armv8mbl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_armv8mml.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm0plus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm23.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm33.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_cm7.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_sc000.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\core_sc300.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="CMSIS\Include\tz_context.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_divas_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_dmac_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_gclk_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_mclk_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_osc32kctrl_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_oscctrl_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\hpl_port_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\peripheral_clk_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="driver_init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="driver_init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="examples\driver_examples.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="examples\driver_examples.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_atomic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hal_sleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_core.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_div.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_dma.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_irq.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_missing_features.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_reset.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\include\hpl_sleep.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_atomic.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_delay.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_io.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\src\hal_sleep.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\compiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\err_codes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\events.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\parts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils_assert.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils_event.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils_increment_macro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils_list.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\include\utils_repeat_macro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\src\utils_assert.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\src\utils_event.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\src\utils_list.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hal\utils\src\utils_syscalls.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\core\hpl_core_m0plus_base.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\core\hpl_core_port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\core\hpl_init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\divas\hpl_divas.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\dmac\hpl_dmac.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\gclk\hpl_gclk.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\gclk\hpl_gclk_base.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\mclk\hpl_mclk.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\osc32kctrl\hpl_osc32kctrl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\oscctrl\hpl_oscctrl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\pm\hpl_pm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\pm\hpl_pm_base.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hpl\port\hpl_gpio_base.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_ac_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_adc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_can_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_ccl_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_dac_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_divas_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_dmac_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_dsu_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_eic_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_evsys_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_freqm_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_gclk_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_hmatrixb_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_mclk_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_mpu_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_mtb_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_nvic_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_nvmctrl_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_osc32kctrl_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_oscctrl_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_pac_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_pm_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_port_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_rstc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_rtc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_sdadc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_sercom_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_supc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_systemcontrol_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_systick_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_tcc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_tc_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_tsens_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hri\hri_wdt_c21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component-version.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\ac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\can.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\ccl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\dac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\divas.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\dmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\dsu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\eic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\evsys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\freqm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\gclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\hmatrixb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\mclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\mtb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\nvmctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\osc32kctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\oscctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\pac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\rstc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\sdadc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\sercom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\supc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\tcc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\tsens.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\component\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\ac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\adc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\adc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\can0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\can1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\ccl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\dac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\divas.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\dmac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\dsu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\eic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\evsys.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\freqm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\gclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\hmatrixhs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\mclk.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\mtb.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\nvmctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\osc32kctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\oscctrl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\pac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\ptc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\rstc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sdadc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\sercom5.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\supc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tc2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tc3.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tc4.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tcc0.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tcc1.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tcc2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\tsens.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\instance\wdt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21e15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21e16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21e17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21e18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21g15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21g16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21g17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21g18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j17au.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\pio\samc21j18au.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\sam.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21e15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21e16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21e17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21e18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21g15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21g16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21g17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21g18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j15a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j16a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j17a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j17au.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j18a.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\samc21j18au.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\include\system_samc21.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\startup\startup_samc21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="samc21\startup\system_samc21.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
