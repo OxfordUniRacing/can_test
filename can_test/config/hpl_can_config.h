@@ -63,7 +63,7 @@
 // <i> time segment after sample point
 // <id> can_btp_tseg2
 #ifndef CONF_CAN0_BTP_TSEG2
-#define CONF_CAN0_BTP_TSEG2 8
+#define CONF_CAN0_BTP_TSEG2 4
 #endif
 
 // <o> Data (Re)Syncronization Jump Width <1-16>
@@ -88,7 +88,7 @@
 // <i> Data Baud Rate Prescaler
 // <id> can_dbtp_dbrp
 #ifndef CONF_CAN0_DBTP_DBRP
-#define CONF_CAN0_DBTP_DBRP 1
+#define CONF_CAN0_DBTP_DBRP 3
 #endif
 
 // <o> Fast time segment before sample point <1-32>
@@ -240,7 +240,7 @@
 // <1=> Reject all remote frames with 11-bit standard IDs
 // <id> can_gfc_rrfs
 #ifndef CONF_CAN0_GFC_RRFS
-#define CONF_CAN0_GFC_RRFS 1
+#define CONF_CAN0_GFC_RRFS 0
 #endif
 
 // <o> Reject Remote Frames Extended
@@ -249,7 +249,7 @@
 // <1=> Reject all remote frames with 29-bit standard IDs
 // <id> can_gfc_rrfe
 #ifndef CONF_CAN0_GFC_RRFE
-#define CONF_CAN0_GFC_RRFE 1
+#define CONF_CAN0_GFC_RRFE 0
 #endif
 
 // <o> Number of standard Message ID filter elements <0-128>
